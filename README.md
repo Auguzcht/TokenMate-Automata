@@ -69,12 +69,55 @@ const result = tokenizer.analyze("Check out https://example.com! #awesome @user 
 
 ```mermaid
 graph LR
-    A[Start] --> B[URL State]
-    A --> C[Hashtag State]
-    A --> D[Mention State]
-    B --> E[URL End]
-    C --> F[Hashtag End]
-    D --> G[Mention End]
+    S((0-START)) --> W[1-WORD_START]
+    S --> U[20-URL_START]
+    S --> H[30-HASHTAG_START]
+    S --> M[40-MENTION_START]
+    S --> E[50-EMOTICON_START]
+    S --> EJ[60-EMOJI_START]
+    S --> EM[70-EMAIL_START]
+
+    %% Word Path
+    W --> VW((2-VALID_WORD))
+
+    %% URL Path
+    U --> UP[21-URL_PROTOCOL]
+    UP --> UD((22-URL_DOMAIN))
+
+    %% Hashtag Path
+    H --> VH((31-VALID_HASHTAG))
+
+    %% Mention Path
+    M --> VM((41-VALID_MENTION))
+
+    %% Emoticon Path
+    E --> EN[51-EMOTICON_NOSE]
+    E --> VE((52-VALID_EMOTICON))
+    EN --> VE
+
+    %% Emoji Path
+    EJ --> VEJ((61-VALID_EMOJI))
+
+    %% Email Path
+    EM --> EU[71-EMAIL_USERNAME]
+    EU --> EA[72-EMAIL_AT]
+    EA --> ED[73-EMAIL_DOMAIN]
+    ED --> EDT[74-EMAIL_DOT]
+    EDT --> VEM((75-VALID_EMAIL))
+
+    %% Error States
+    S --> ERR((99-ERROR))
+    ERR --> REC[98-ERROR_RECOVERY]
+    REC --> S
+
+    %% Styling
+    classDef start fill:#9f9,stroke:#333,stroke-width:2px
+    classDef final fill:#f99,stroke:#333,stroke-width:2px
+    classDef normal fill:#fff,stroke:#333,stroke-width:1px
+    
+    class S start
+    class VW,UD,VH,VM,VE,VEJ,VEM,ERR final
+    class W,U,H,M,E,EJ,EM,UP,EN,EU,EA,ED,EDT,REC normal
 ```
 
 ## 🧪 Running Tests
