@@ -7,7 +7,7 @@
 
 ## 🎯 Overview
 
-TokenMate is a modern and sophisticated web-based tokenizer that leverages deterministic finite automata to provide precise token recognition with explicit state transitions. Perfect for processing modern web content and structured text analysis.
+TokenMate is a modern and sophisticated web-based tokenizer that leverages non-deterministic finite automata (NFA) to provide precise token recognition with explicit state transitions. Perfect for processing modern web content and structured text analysis.
 
 ## ⚡ Key Features
 
@@ -20,7 +20,7 @@ TokenMate is a modern and sophisticated web-based tokenizer that leverages deter
 ## 🔧 Technical Implementation
 
 TokenMate uses a sophisticated state machine with:
-- Deterministic Finite Automata (DFA) for token processing
+- Non-Deterministic Finite Automata (NFA) for token processing
 - Real-time state transitions
 - Pattern matching with explicit state sequences
 - Support for Unicode characters and special sequences
