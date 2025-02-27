@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
-import logoImage from '../assets/TokenMate-logo.png';
+import logoImage from '@assets/TokenMate-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

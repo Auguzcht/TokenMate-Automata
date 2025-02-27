@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin } from 'react-icons/fi';
 
 // Import profile images
-import alfredProfile from '../assets/Alfred-Picture.jpg';
-import joshuaProfile from '../assets/Joshua-Picture.jpg';
-import hannaProfile from '../assets/Hanna-Picture.jpg';
+import alfredProfile from '@/assets/Alfred-Picture.jpg';
+import joshuaProfile from '@/assets/Joshua-Picture.jpg';
+import hannaProfile from '@/assets/Hanna-Picture.jpg';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

@@ -5,32 +5,33 @@ export default defineConfig({
   plugins: [react()],
   base: '/TokenMate/',
   
-  // Add assetsInclude for JFF files
   assetsInclude: ['**/*.jff', '**/*.xml'],
   
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    
-    // Configure public directory handling
     publicDir: 'public',
     
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.')[1];
+          const info = assetInfo.name.split('.');
+          const extType = info[info.length - 1];
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
+            return `assets/images/[name]-[hash][extname]`;
           } else if (/jff|xml/i.test(extType)) {
-            extType = 'automata';
+            return `assets/automata/[name]-[hash][extname]`;
+          } else if (/css/i.test(extType)) {
+            return `assets/css/[name]-[hash][extname]`;
           }
-          return `assets/${extType}/[name]-[hash][extname]`;
+          return `assets/[name]-[hash][extname]`;
         },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
   },
   
-  // Add server configuration for better development experience
   server: {
     watch: {
       usePolling: true,
@@ -42,11 +43,11 @@ export default defineConfig({
     }
   },
 
-  // Add resolve aliases for easier imports
   resolve: {
     alias: {
       '@': '/src',
-      '@automata': '/src/automata'
+      '@automata': '/src/automata',
+      '@assets': '/src/assets'
     }
   }
 })
