@@ -94,11 +94,12 @@ npm run test
 TokenMate/
 ├── src/
 │   ├── components/
-│   ├── automata/
+│   ├── hooks/
+│   ├── router/
+│   ├── context/
 │   ├── utils/
 │   └── assets/
-├── tests/
-└── docs/
+└── configs
 ```
 
 ## 🤝 Contributing
@@ -115,9 +116,9 @@ For a detailed view of the state transitions, check out our [JFLAP State Diagram
 
 ## 👥 Authors
 
-- Alfred Nodado - *Full-Stack Developer* - [@YourGitHub](https://github.com/Auguzcht)
-- Joshua Famor - *Model Architect* - [@YourGitHub](https://github.com/Joshieww)
-- Hanna Sato - *Researcher* - [@YourGitHub](https://github.com/HSatsss)
+- Alfred Nodado - *Full-Stack Developer* - [@Auguzcht](https://github.com/Auguzcht)
+- Joshua Famor - *Model Architect* - [@Joshieww](https://github.com/Joshieww)
+- Hanna Sato - *Researcher* - [@HSatsss](https://github.com/HSatsss)
 
 ## 🙏 Acknowledgments
 
