@@ -49,7 +49,7 @@ const Contact = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '149a6de3-e80b-4e27-899e-1879a92688c5',
+          access_key: '// your access key here //',
           ...formData
         })
       });
@@ -244,7 +244,7 @@ const Contact = () => {
                   <div className="absolute inset-0 z-10 pointer-events-none border border-[#EC4899]/20 rounded-xl 
                                   group-hover:border-[#EC4899]/50 transition-colors duration-300" />
                   <iframe
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDCPUsqvxBIyEHEBHN8EcsFb0scI-oWb7Y&q=7.063147997693241,125.59601687835966&zoom=17"
+                    src="https://www.google.com/maps/embed/v1/place?key='// your access key here //'&q=7.063147997693241,125.59601687835966&zoom=17"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
