@@ -155,7 +155,7 @@ TokenMate/
 
 ## 📈 State Diagram
 
-For a detailed view of the state transitions, check out our [JFLAP State Diagram](public/automata/Final%20FA%20Automata.jff).
+For a detailed view of the state transitions, check out our [JFLAP State Diagram](public/automata/final-jflap-automata.jff).
 
 ## 👥 Authors
 
